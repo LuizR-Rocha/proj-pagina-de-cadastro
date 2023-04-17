@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	
+	<head>
+		<meta charset="UTF-8">
+		<title>Projeto 1</title>
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	
+	<body>
+		<main>
+			<h1>Cadastro:</h1>
+			<form class="formulario" id="theForm">
+
+				<label for="nomecompleto">Nome completo</label>
+				<input type="text" id="nomecompleto" class="input-padrao" required placeholder="Exemplo: João Barbosa dos Santos (até 100 caracteres)">
+
+				<label for="cpf">CPF</label>
+				<input type="text" id="cpf" onchange="validateCPF()" maxlength="14" class="input-padrao" required placeholder="Exemplo: 111.111.111-01">
+
+                <label for="endereco">Endereço</label>
+				<input type="text" id="endereco" class="input-padrao" required placeholder="Exemplo: Rua A, 679, Centro, Uberaba">
+
+                <label for="datanasc">Data de nascimento</label>
+				<input type="date" id="datanasc" class="input-padrao" max="2020-01-01">
+
+                <label for="rendamensal">Renda Mensal</label>
+				<input type="text" id="rendamensal"  onchange="validateRenda()" class="input-padrao" required placeholder="Exemplo: 2.787,00 (em R$)">
+                
+                <label for="profissao">Profissão</label>
+				<input type="text" id="profissao" class="input-padrao" required placeholder="Exemplo: Eletricista">
+
+                <input type="submit" id ="enviar" value="Enviar">
+			</form>
+		</main>
+
+        <p id="idadeUser"></p>
+		<p id="rendaUser"></p>
+
+		<script src="script.js"></script>
+	</body>
+</html>
