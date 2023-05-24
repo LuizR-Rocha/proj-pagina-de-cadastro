@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="UTF-8">
-		<title>Projeto 1</title>
+		<title>Página de Cadastro</title>
 		<link rel="stylesheet" href="reset.css">
 		<link rel="stylesheet" href="style.css">
 	</head>
@@ -14,13 +14,13 @@
 			<form class="formulario" id="theForm">
 
 				<label for="nomecompleto">Nome completo</label>
-				<input type="text" id="nomecompleto" class="input-padrao" required placeholder="Exemplo: João Barbosa dos Santos (até 100 caracteres)">
+				<input type="text" id="nomecompleto" class="input-padrao" onchange="verifynomecompleto()" required placeholder="Exemplo: João Barbosa dos Santos (até 100 caracteres)">
 
 				<label for="cpf">CPF</label>
-				<input type="text" id="cpf" onchange="validateCPF()" maxlength="14" class="input-padrao" required placeholder="Exemplo: 111.111.111-01">
+				<input type="text" id="cpf" onchange="validateCPF()" maxlength="14" class="input-padrao" required placeholder="Exemplo: 11111111101 (somente números e até 11 caracteres)">
 
                 <label for="endereco">Endereço</label>
-				<input type="text" id="endereco" class="input-padrao" required placeholder="Exemplo: Rua A, 679, Centro, Uberaba">
+				<input type="text" id="endereco" onchange="verifyendereco()" class="input-padrao" required placeholder="Exemplo: Rua A, 679, Centro, Uberaba (até 100 caracteres)">
 
                 <label for="datanasc">Data de nascimento</label>
 				<input type="date" id="datanasc" class="input-padrao" max="2020-01-01">
@@ -29,14 +29,18 @@
 				<input type="text" id="rendamensal"  onchange="validateRenda()" class="input-padrao" required placeholder="Exemplo: 2.787,00 (em R$)">
                 
                 <label for="profissao">Profissão</label>
-				<input type="text" id="profissao" class="input-padrao" required placeholder="Exemplo: Eletricista">
+				<select id="profissao" class="input-padrao">
+					<option value="Opção não selecionada" selected disabled hidden>Selecione uma das opções:</option>
+					<option value="Técnico em Eletrônica">Técnico em Eletrônica</option>
+					<option value="Professor">Professor</option>
+					<option value="Gerente">Gerente</option>
+					<option value="Atendente">Atendente</option>
+				</select>
 
                 <input type="submit" id ="enviar" value="Enviar">
 			</form>
+			<p id="infouser"></p>
 		</main>
-
-        <p id="idadeUser"></p>
-		<p id="rendaUser"></p>
 
 		<script src="script.js"></script>
 	</body>
